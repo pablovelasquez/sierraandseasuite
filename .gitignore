@@ -1,0 +1,16 @@
+# Environment secrets
+.env
+
+# Node
+node_modules/
+
+# Build/test artifacts
+.next/
+test-results/
+*.tsbuildinfo
+team/artifacts/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db

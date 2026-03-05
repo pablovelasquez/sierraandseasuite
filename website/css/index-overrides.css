@@ -1,0 +1,125 @@
+/* English home (Webflow export) mobile stability overrides */
+.hero-section .hidden,
+.hero-section .hidden > * {
+  display: block !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.hero-section .hero-title[style],
+.hero-section .hero-price-row[style],
+.hero-section .hero-subtile-box[style],
+.hero-section .hero-item[style],
+.hero-section .hero-item-2[style],
+.hero-section .hero-item-3[style] {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.hero-section .flex-hidden {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  gap: 0 !important;
+}
+
+.hero-section .hero-item,
+.hero-section .hero-item-2,
+.hero-section .hero-item-3 {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-start !important;
+}
+
+@media screen and (min-width: 768px) {
+  .hero-section .hero-slider {
+    min-height: 700px !important;
+    height: 700px !important;
+  }
+
+  .hero-section .parallax-bg {
+    background-size: cover !important;
+    background-position: 50% 50% !important;
+  }
+
+  .hero-section .hero-flex {
+    width: 62% !important;
+    padding-bottom: 54px !important;
+  }
+
+  .hero-section .hero-item {
+    width: 24% !important;
+  }
+
+  .hero-section .hero-item-2 {
+    width: 29% !important;
+  }
+
+  .hero-section .hero-item-3 {
+    width: 25% !important;
+  }
+
+  .hero-section .hero-mini-text {
+    font-size: 14px !important;
+    line-height: 1.2 !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .hero-section .hero-wrapper {
+    align-items: flex-start !important;
+    padding-top: 84px;
+  }
+
+  .hero-section .hero-flex {
+    width: 100% !important;
+    padding-bottom: 0 !important;
+    overflow: visible !important;
+  }
+
+  .hero-section .hero-price-row .currency {
+    position: relative;
+    top: 4px !important;
+  }
+
+  .hero-section .hero-title {
+    margin: 0 0 8px !important;
+    font-size: clamp(44px, 11vw, 56px) !important;
+    line-height: 1.02 !important;
+  }
+
+  .hero-section .flex-hidden {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 0 !important;
+  }
+
+  .hero-section .hero-item,
+  .hero-section .hero-item-2,
+  .hero-section .hero-item-3 {
+    width: 33.333% !important;
+    min-width: 0 !important;
+    margin-right: 0 !important;
+    border-right: 1px solid #f1f1ed80 !important;
+    padding: 8px 6px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 4px !important;
+  }
+
+  .hero-section .hero-item-3 {
+    border-right: 0 !important;
+  }
+
+  .hero-section .hero-mini-text {
+    font-size: 12.5px !important;
+    line-height: 1.2 !important;
+    letter-spacing: 0 !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  .hero-section .hero-icons {
+    width: 28px !important;
+    margin-bottom: 0 !important;
+  }
+}
