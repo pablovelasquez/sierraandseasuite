@@ -123,3 +123,138 @@
     margin-bottom: 0 !important;
   }
 }
+
+/* Penthouse gallery: force full-bleed slide images */
+.slider-3,
+.slider-3 .w-slider-mask,
+.slider-3 .w-slide {
+  height: 100% !important;
+}
+
+.slider-3 .w-slide {
+  overflow: hidden;
+}
+
+.slider-3 .image-9,
+.slider-3 .w-slide > img {
+  width: 100% !important;
+  max-width: none !important;
+  height: 100% !important;
+  max-height: none !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+/* English homepage reliability: show key animated sections if Webflow interactions fail */
+.hero-section [style*="opacity:0"],
+.content-section-colored [style*="opacity:0"],
+.content-section.blog [style*="opacity:0"] {
+  opacity: 1 !important;
+}
+
+/* Remove legacy sidebars/drawers to avoid accidental panel opening */
+.book-form-2,
+.side-contact-form {
+  display: none !important;
+}
+
+/* Remove homepage price visibility; booking happens on Airbnb */
+.hero-price-row .price-container,
+.hero-subtile-box {
+  display: none !important;
+}
+
+.hero-price-row {
+  margin-top: 10px !important;
+}
+
+/* Spanish header/hero tune to align with English look */
+html[lang="es"] .navbar .login-box {
+  display: flex;
+  align-items: center;
+}
+
+html[lang="es"] .navbar .english-button-2 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+html[lang="es"] .es-home-title {
+  font-weight: 600 !important;
+}
+
+html[lang="es"] .hero-section .button-fill {
+  font-weight: 600 !important;
+}
+
+/* Penthouse gallery: desktop/mobile sizing and image presence */
+#penthouse .slider-3 {
+  width: 100% !important;
+  max-width: none !important;
+  min-height: 560px !important;
+  height: 560px !important;
+}
+
+#penthouse .slider-3 .w-slider-mask,
+#penthouse .slider-3 .w-slide {
+  height: 100% !important;
+}
+
+#penthouse .slider-3 .w-slide > img,
+#penthouse .slider-3 .image-9 {
+  width: 100% !important;
+  max-width: none !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  filter: brightness(1.04) contrast(1.02);
+}
+
+@media screen and (max-width: 767px) {
+  #penthouse .slider-3 {
+    min-height: 300px !important;
+    height: 58vw !important;
+    max-height: 420px !important;
+  }
+}
+
+/* Penthouse slider hard-fix: avoid any partial-size rendering across breakpoints */
+#Apartments .unit-row:first-of-type > .column-center-flex {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+#Apartments .unit-row:first-of-type .slider-3 {
+  width: 100% !important;
+  max-width: none !important;
+  height: clamp(320px, 34vw, 560px) !important;
+  min-height: 320px !important;
+}
+
+#Apartments .unit-row:first-of-type .slider-3 .w-slider-mask,
+#Apartments .unit-row:first-of-type .slider-3 .w-slide,
+#Apartments .unit-row:first-of-type .slider-3 .w-slide > img {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+#Apartments .unit-row:first-of-type .slider-3 .w-slide > img {
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block !important;
+}
+
+@media screen and (max-width: 991px) {
+  #Apartments .unit-row:first-of-type .slider-3 {
+    height: clamp(280px, 44vw, 480px) !important;
+    min-height: 280px !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #Apartments .unit-row:first-of-type .slider-3 {
+    height: clamp(220px, 60vw, 340px) !important;
+    min-height: 220px !important;
+  }
+}
