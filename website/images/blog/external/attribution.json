@@ -1,0 +1,56 @@
+[
+  {
+    "id": "sm_beach_sunset",
+    "file": "sm_beach_sunset.jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:Sunshine_at_Santa_Marta_beach_Colombia.jpeg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Sunshine_at_Santa_Marta_beach_Colombia.jpeg",
+    "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Oliver_H\" title=\"User:Oliver H\">User:Oliver H</a>",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  {
+    "id": "sm_rodadero_aerial",
+    "file": "sm_rodadero_aerial.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:El_Rodadero,_Santa_Marta-Colombia_pan.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b3/El_Rodadero%2C_Santa_Marta-Colombia_pan.jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/wiki/User:EEIM\" title=\"User:EEIM\">EEIM</a>",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "id": "sm_rodadero_shore",
+    "file": "sm_rodadero_shore.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:El_Rodadero-Santa_Marta.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/32/El_Rodadero-Santa_Marta.jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:ADRYGIL&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:ADRYGIL (page does not exist)\">ADRYGIL</a>",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "id": "sm_sierra_nevada_view",
+    "file": "sm_sierra_nevada_view.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:SIERRA_NEVADA_DE_SANTA_MARTA.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/74/SIERRA_NEVADA_DE_SANTA_MARTA.jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Gicaman&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Gicaman (page does not exist)\">Gicaman</a>",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "id": "sm_sierra_dawn",
+    "file": "sm_sierra_dawn.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Amanecer_Sierra_Nevada_de_Santa_Marta.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/90/Amanecer_Sierra_Nevada_de_Santa_Marta.jpg",
+    "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/8278107@N08\">Jenni Contreras</a> from Colombia",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0"
+  },
+  {
+    "id": "sm_sierra_forest",
+    "file": "sm_sierra_forest.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Sierra_nevada_de_santa_Marta.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Sierra_nevada_de_santa_Marta.jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Rolo_Andes&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Rolo Andes (page does not exist)\">Rolo Andes</a>",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  }
+]

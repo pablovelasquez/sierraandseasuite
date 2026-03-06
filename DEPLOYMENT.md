@@ -9,8 +9,9 @@ This repo is preconfigured with a deployment workflow:
 ## What the workflow does
 
 1. Validates required secrets exist
-2. Syncs `website/` to your S3 bucket
-3. Invalidates CloudFront cache (`/*`)
+2. Generates `website/sitemap.xml`, `website/robots.txt`, and route manifest
+3. Syncs `website/` to your S3 bucket
+4. Invalidates CloudFront cache (`/*`)
 
 ## Required GitHub Secrets
 
@@ -39,3 +40,18 @@ After adding secrets:
 1. Push any small change to `main`, or run the workflow manually.
 2. Check Action logs for `Sync website to S3` and `Invalidate CloudFront cache`.
 3. Open your CloudFront domain and hard refresh.
+
+## Clean URLs + 301 Redirects (SEO)
+
+To preserve SEO and keep routes working without `.html`, use the CloudFront Function generated in:
+
+- `infrastructure/cloudfront/clean-url-redirect.js`
+
+It does:
+
+- `301` redirect from `/page.html` -> `/page` (canonical)
+- Internal rewrite from `/page` -> `/page.html` (origin fetch)
+
+Setup steps are documented in:
+
+- `infrastructure/cloudfront/README.md`

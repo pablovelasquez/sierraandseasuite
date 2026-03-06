@@ -1,0 +1,83 @@
+[
+  {
+    "viewport": {
+      "name": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      }
+    },
+    "metricsStart": {
+      "slider": null,
+      "mask": null,
+      "activeSlide": null,
+      "image": null,
+      "imageNatural": null,
+      "imageStyles": null,
+      "sliderStyles": null
+    },
+    "metricsEnd": {
+      "slider": null,
+      "mask": null,
+      "activeSlide": null,
+      "image": null,
+      "imageNatural": null,
+      "imageStyles": null,
+      "sliderStyles": null
+    }
+  },
+  {
+    "viewport": {
+      "name": "tablet",
+      "viewport": {
+        "width": 1024,
+        "height": 1366
+      }
+    },
+    "metricsStart": {
+      "slider": null,
+      "mask": null,
+      "activeSlide": null,
+      "image": null,
+      "imageNatural": null,
+      "imageStyles": null,
+      "sliderStyles": null
+    },
+    "metricsEnd": {
+      "slider": null,
+      "mask": null,
+      "activeSlide": null,
+      "image": null,
+      "imageNatural": null,
+      "imageStyles": null,
+      "sliderStyles": null
+    }
+  },
+  {
+    "viewport": {
+      "name": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 900
+      }
+    },
+    "metricsStart": {
+      "slider": null,
+      "mask": null,
+      "activeSlide": null,
+      "image": null,
+      "imageNatural": null,
+      "imageStyles": null,
+      "sliderStyles": null
+    },
+    "metricsEnd": {
+      "slider": null,
+      "mask": null,
+      "activeSlide": null,
+      "image": null,
+      "imageNatural": null,
+      "imageStyles": null,
+      "sliderStyles": null
+    }
+  }
+]

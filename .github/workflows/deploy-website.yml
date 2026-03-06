@@ -56,6 +56,10 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
+      - name: Generate sitemap and SEO route artifacts
+        run: |
+          node scripts/generate_sitemap_and_redirects.mjs
+
       - name: Sync website to S3
         run: |
           aws s3 sync website/ "s3://${S3_BUCKET}" \

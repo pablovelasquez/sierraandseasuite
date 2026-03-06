@@ -1,0 +1,174 @@
+{
+  "generatedAt": "2026-03-06T11:44:43.004Z",
+  "baseUrl": "https://www.sierraseasuite.com",
+  "routes": [
+    {
+      "cleanPath": "/",
+      "htmlPath": "/index.html",
+      "relPath": "index.html",
+      "lastmod": "2026-03-05"
+    },
+    {
+      "cleanPath": "/category/activities",
+      "htmlPath": "/category/activities.html",
+      "relPath": "category/activities.html",
+      "lastmod": "2026-03-05"
+    },
+    {
+      "cleanPath": "/category/dinning",
+      "htmlPath": "/category/dinning.html",
+      "relPath": "category/dinning.html",
+      "lastmod": "2026-03-05"
+    },
+    {
+      "cleanPath": "/category/travel",
+      "htmlPath": "/category/travel.html",
+      "relPath": "category/travel.html",
+      "lastmod": "2026-03-06"
+    },
+    {
+      "cleanPath": "/contact-us",
+      "htmlPath": "/contact-us.html",
+      "relPath": "contact-us.html",
+      "lastmod": "2026-03-06"
+    },
+    {
+      "cleanPath": "/data-polices",
+      "htmlPath": "/data-polices.html",
+      "relPath": "data-polices.html",
+      "lastmod": "2026-03-05"
+    },
+    {
+      "cleanPath": "/es/category/activities",
+      "htmlPath": "/es/category/activities.html",
+      "relPath": "es/category/activities.html",
+      "lastmod": "2026-03-05"
+    },
+    {
+      "cleanPath": "/es/category/dinning",
+      "htmlPath": "/es/category/dinning.html",
+      "relPath": "es/category/dinning.html",
+      "lastmod": "2026-03-05"
+    },
+    {
+      "cleanPath": "/es/category/travel",
+      "htmlPath": "/es/category/travel.html",
+      "relPath": "es/category/travel.html",
+      "lastmod": "2026-03-06"
+    },
+    {
+      "cleanPath": "/es/contactanos",
+      "htmlPath": "/es/contactanos.html",
+      "relPath": "es/contactanos.html",
+      "lastmod": "2026-03-06"
+    },
+    {
+      "cleanPath": "/es/guia-turistica",
+      "htmlPath": "/es/guia-turistica.html",
+      "relPath": "es/guia-turistica.html",
+      "lastmod": "2026-03-06"
+    },
+    {
+      "cleanPath": "/es/habeas-data",
+      "htmlPath": "/es/habeas-data.html",
+      "relPath": "es/habeas-data.html",
+      "lastmod": "2026-03-05"
+    },
+    {
+      "cleanPath": "/es/inicio",
+      "htmlPath": "/es/inicio.html",
+      "relPath": "es/inicio.html",
+      "lastmod": "2026-03-05"
+    },
+    {
+      "cleanPath": "/es/preguntas-fecuentes",
+      "htmlPath": "/es/preguntas-fecuentes.html",
+      "relPath": "es/preguntas-fecuentes.html",
+      "lastmod": "2026-03-05"
+    },
+    {
+      "cleanPath": "/es/reglas-y-politicas",
+      "htmlPath": "/es/reglas-y-politicas.html",
+      "relPath": "es/reglas-y-politicas.html",
+      "lastmod": "2026-03-05"
+    },
+    {
+      "cleanPath": "/faq",
+      "htmlPath": "/faq.html",
+      "relPath": "faq.html",
+      "lastmod": "2026-03-05"
+    },
+    {
+      "cleanPath": "/post-espanol/donde-alojarse-en-santa-marta-bello-horizonte-vs-rodadero-vs-centro-historico",
+      "htmlPath": "/post-espanol/donde-alojarse-en-santa-marta-bello-horizonte-vs-rodadero-vs-centro-historico.html",
+      "relPath": "post-espanol/donde-alojarse-en-santa-marta-bello-horizonte-vs-rodadero-vs-centro-historico.html",
+      "lastmod": "2026-03-06"
+    },
+    {
+      "cleanPath": "/post-espanol/explorando-la-sierra-nevada-de-santa-marta-aventuras-de-trekking-y-encuentros-con-comunidades-indigenas",
+      "htmlPath": "/post-espanol/explorando-la-sierra-nevada-de-santa-marta-aventuras-de-trekking-y-encuentros-con-comunidades-indigenas.html",
+      "relPath": "post-espanol/explorando-la-sierra-nevada-de-santa-marta-aventuras-de-trekking-y-encuentros-con-comunidades-indigenas.html",
+      "lastmod": "2026-03-05"
+    },
+    {
+      "cleanPath": "/post-espanol/guia-combinada-minca-santa-marta-cascadas-cafe-logistica",
+      "htmlPath": "/post-espanol/guia-combinada-minca-santa-marta-cascadas-cafe-logistica.html",
+      "relPath": "post-espanol/guia-combinada-minca-santa-marta-cascadas-cafe-logistica.html",
+      "lastmod": "2026-03-06"
+    },
+    {
+      "cleanPath": "/post-espanol/guia-viaje-santa-marta-playas-historia-aventura",
+      "htmlPath": "/post-espanol/guia-viaje-santa-marta-playas-historia-aventura.html",
+      "relPath": "post-espanol/guia-viaje-santa-marta-playas-historia-aventura.html",
+      "lastmod": "2026-03-05"
+    },
+    {
+      "cleanPath": "/post-espanol/santa-marta-sin-tayrona-itinerario-practico-5-dias",
+      "htmlPath": "/post-espanol/santa-marta-sin-tayrona-itinerario-practico-5-dias.html",
+      "relPath": "post-espanol/santa-marta-sin-tayrona-itinerario-practico-5-dias.html",
+      "lastmod": "2026-03-06"
+    },
+    {
+      "cleanPath": "/post/aventuras-caminatas-sierra-nevada-santa-marta",
+      "htmlPath": "/post/aventuras-caminatas-sierra-nevada-santa-marta.html",
+      "relPath": "post/aventuras-caminatas-sierra-nevada-santa-marta.html",
+      "lastmod": "2026-03-05"
+    },
+    {
+      "cleanPath": "/post/minca-santa-marta-combo-guide",
+      "htmlPath": "/post/minca-santa-marta-combo-guide.html",
+      "relPath": "post/minca-santa-marta-combo-guide.html",
+      "lastmod": "2026-03-06"
+    },
+    {
+      "cleanPath": "/post/santa-marta-first-time-guide",
+      "htmlPath": "/post/santa-marta-first-time-guide.html",
+      "relPath": "post/santa-marta-first-time-guide.html",
+      "lastmod": "2026-03-05"
+    },
+    {
+      "cleanPath": "/post/santa-marta-without-tayrona-5-day-itinerary",
+      "htmlPath": "/post/santa-marta-without-tayrona-5-day-itinerary.html",
+      "relPath": "post/santa-marta-without-tayrona-5-day-itinerary.html",
+      "lastmod": "2026-03-06"
+    },
+    {
+      "cleanPath": "/post/where-to-stay-santa-marta-bello-horizonte-vs-rodadero-vs-historic-center",
+      "htmlPath": "/post/where-to-stay-santa-marta-bello-horizonte-vs-rodadero-vs-historic-center.html",
+      "relPath": "post/where-to-stay-santa-marta-bello-horizonte-vs-rodadero-vs-historic-center.html",
+      "lastmod": "2026-03-06"
+    },
+    {
+      "cleanPath": "/rules-and-policies",
+      "htmlPath": "/rules-and-policies.html",
+      "relPath": "rules-and-policies.html",
+      "lastmod": "2026-03-05"
+    },
+    {
+      "cleanPath": "/santa-marta-and-sierra-nevada-tourist-guide",
+      "htmlPath": "/santa-marta-and-sierra-nevada-tourist-guide.html",
+      "relPath": "santa-marta-and-sierra-nevada-tourist-guide.html",
+      "lastmod": "2026-03-06"
+    }
+  ]
+}
