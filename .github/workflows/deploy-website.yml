@@ -14,7 +14,7 @@ permissions:
 env:
   AWS_REGION: ${{ secrets.AWS_REGION }}
   S3_BUCKET: ${{ secrets.S3_BUCKET }}
-  CLOUDFRONT_DISTRIBUTION_ID: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
+  CLOUDFRONT_DISTRIBUTION_ID: E34R8IP5SI7083
 
 concurrency:
   group: deploy-website-production
@@ -35,10 +35,9 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: ${{ secrets.AWS_REGION }}
           S3_BUCKET: ${{ secrets.S3_BUCKET }}
-          CLOUDFRONT_DISTRIBUTION_ID: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
         run: |
           missing=0
-          for key in AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_REGION S3_BUCKET CLOUDFRONT_DISTRIBUTION_ID; do
+          for key in AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_REGION S3_BUCKET; do
             if [ -z "${!key}" ]; then
               echo "::error::Missing required secret: $key"
               missing=1
