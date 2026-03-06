@@ -188,6 +188,94 @@ html[lang="es"] .hero-section .button-fill {
   font-weight: 600 !important;
 }
 
+/* Header polish: remove blank language pill spacing and keep nav balanced */
+.nav-content-wrapper {
+  padding-right: 25px;
+}
+
+.navbar-2 .nav-content-wrapper {
+  gap: 10px;
+  justify-content: space-between;
+  padding-left: clamp(12px, 2vw, 24px);
+  padding-right: clamp(12px, 2vw, 24px);
+}
+
+.navbar-2 .nav-menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.navbar-2 .login-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  margin-right: 10px;
+  padding-top: 0;
+  min-width: 0;
+  width: auto;
+}
+
+.navbar-2 .english-button-2 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 35px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+}
+
+/* Keep hero/post/inner backgrounds consistently filled */
+.inner-hero-section .parallax-bg,
+.hero-section-about .parallax-bg,
+.post-hero .parallax-bg {
+  background-size: cover !important;
+  background-position: 50% 50% !important;
+}
+
+/* Post readability: stronger hero contrast + cleaner reading surface */
+.post-hero {
+  position: relative;
+}
+
+.post-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.28);
+  pointer-events: none;
+}
+
+.content-section.blog-post {
+  background: #ecece6;
+}
+
+.content-section.blog-post .inner-wrapper {
+  background: rgba(255, 255, 255, 0.94);
+  border-radius: 14px;
+  padding: clamp(18px, 2.6vw, 36px);
+  box-shadow: 0 10px 30px rgba(16, 20, 17, 0.08);
+}
+
+.content-section.blog-post .mini-title,
+.content-section.blog-post .w-richtext p,
+.content-section.blog-post .w-richtext li {
+  color: #334039;
+}
+
+/* Contact pages: one-column hero without empty right panel */
+.contact-page .hero-wrapper-about {
+  justify-content: center;
+}
+
+.contact-page .hero-inner-box.contact-hero-copy {
+  width: min(920px, 100%);
+  max-width: 920px;
+}
+
 /* Penthouse gallery: desktop/mobile sizing and image presence */
 #penthouse .slider-3 {
   width: 100% !important;
@@ -212,6 +300,13 @@ html[lang="es"] .hero-section .button-fill {
 }
 
 @media screen and (max-width: 767px) {
+  .navbar-2 .login-box {
+    width: 100%;
+    margin-right: 0;
+    justify-content: flex-start;
+    padding-left: 20px;
+  }
+
   #penthouse .slider-3 {
     min-height: 300px !important;
     height: 58vw !important;

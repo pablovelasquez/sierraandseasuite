@@ -925,7 +925,7 @@ figcaption {
   color: var(--font-color);
   border-radius: 90px;
   height: 35px;
-  padding: 8px 22px 8px 36px;
+  padding: 8px 18px;
   font-family: Karla, sans-serif;
   font-size: 15px;
   font-weight: 400;
@@ -5037,4 +5037,65 @@ body {
     right: 10px;
     bottom: 10px;
   }
+}
+
+/* Post readability hardening */
+.post-hero {
+  position: relative;
+}
+
+.post-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.28);
+  pointer-events: none;
+}
+
+.content-section.blog-post {
+  background: #ecece6;
+}
+
+.content-section.blog-post .inner-wrapper {
+  background: rgba(255, 255, 255, 0.94);
+  border-radius: 14px;
+  padding: clamp(18px, 2.6vw, 36px);
+  box-shadow: 0 10px 30px rgba(16, 20, 17, 0.08);
+}
+
+.content-section.blog-post .mini-title,
+.content-section.blog-post .w-richtext p,
+.content-section.blog-post .w-richtext li {
+  color: #334039;
+}
+
+/* Contact pages: single-column hero (no empty right panel) */
+.contact-page .hero-wrapper-about {
+  justify-content: center;
+}
+
+.contact-page .hero-inner-box.contact-hero-copy {
+  width: min(920px, 100%);
+  max-width: 920px;
+}
+
+/* Penthouse gallery slider should always fill slide area */
+.slider-3,
+.slider-3 .w-slider-mask,
+.slider-3 .w-slide {
+  height: 100%;
+}
+
+.slider-3 .w-slide {
+  overflow: hidden;
+}
+
+.slider-3 .image-9,
+.slider-3 .w-slide > img {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  max-height: none;
+  object-fit: cover;
+  display: block;
 }
