@@ -51,7 +51,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ secrets.AWS_REGION }}
+          aws-region: ${{ env.AWS_REGION }}
 
       - name: Generate sitemap and SEO route artifacts
         run: |
@@ -62,6 +62,31 @@ jobs:
           aws s3 sync website/ "s3://${S3_BUCKET}" \
             --delete \
             --exact-timestamps
+
+      - name: Publish clean URL aliases (no .html)
+        run: |
+          while IFS= read -r -d '' file; do
+            rel="${file#website/}"
+
+            if [ "$rel" = "index.html" ]; then
+              continue
+            fi
+
+            if [[ "$rel" == */index.html ]]; then
+              key="${rel%/index.html}"
+            elif [[ "$rel" == *.html ]]; then
+              key="${rel%.html}"
+            else
+              continue
+            fi
+
+            if [ -z "$key" ]; then
+              continue
+            fi
+
+            aws s3 cp "$file" "s3://${S3_BUCKET}/${key}" \
+              --content-type "text/html; charset=utf-8"
+          done < <(find website -type f -name '*.html' -print0)
 
       - name: Invalidate CloudFront cache
         run: |
