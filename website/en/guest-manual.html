@@ -19,6 +19,7 @@
       --muted: #4a5d69;
       --accent: #2f9f80;
       --accent-dark: #1f7b62;
+      --soft: #eef8f4;
     }
 
     html, body {
@@ -28,7 +29,11 @@
       overflow-x: hidden !important;
     }
 
-    body { background: var(--bg); color: var(--text); }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+    }
 
     .manual-wrap {
       max-width: 1024px;
@@ -43,7 +48,7 @@
       border: 1px solid var(--line);
       border-radius: 14px;
       padding: 20px;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
       box-shadow: 0 10px 24px rgba(16, 33, 46, 0.06);
       width: 100%;
       box-sizing: border-box;
@@ -53,10 +58,13 @@
       margin: 0 0 6px;
       font-size: 1.4rem;
       font-weight: 700;
-      letter-spacing: .02em;
+      letter-spacing: 0.02em;
     }
 
-    .manual-sub { margin: 0; color: var(--muted); }
+    .manual-sub {
+      margin: 0;
+      color: var(--muted);
+    }
 
     .manual-section {
       background: var(--card);
@@ -69,9 +77,20 @@
       box-sizing: border-box;
     }
 
+    .manual-section--wifi {
+      background: var(--soft);
+      border-color: #cde9dd;
+    }
+
     .manual-section h2 {
       margin: 0 0 10px;
       font-size: 1.08rem;
+      font-weight: 700;
+    }
+
+    .manual-section h3 {
+      margin: 12px 0 8px;
+      font-size: 0.98rem;
       font-weight: 700;
     }
 
@@ -83,7 +102,33 @@
       overflow-wrap: anywhere;
     }
 
-    .manual-section ul { margin: 0; padding-left: 18px; }
+    .manual-section ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .manual-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .manual-tile {
+      border: 1px solid #cfe2ea;
+      border-radius: 12px;
+      background: #ffffff;
+      padding: 10px;
+    }
+
+    .manual-tile p {
+      margin-bottom: 4px;
+    }
+
+    .muted {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
 
     .note {
       border-left: 3px solid var(--accent);
@@ -92,26 +137,70 @@
       margin-top: 10px;
     }
 
+    .manual-btns {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
     .manual-btn {
       display: inline-block;
       border-radius: 10px;
       padding: 10px 14px;
-      font-size: .9rem;
+      font-size: 0.9rem;
       font-weight: 700;
       text-decoration: none;
       border: 1px solid transparent;
-      transition: all .18s ease;
-      margin-top: 8px;
+      transition: all 0.18s ease;
     }
 
-    .manual-btn-primary { background: var(--accent); color: #fff; }
-    .manual-btn-primary:hover { background: var(--accent-dark); color: #fff; text-decoration: none; }
+    .manual-btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .manual-btn-primary:hover {
+      background: var(--accent-dark);
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .manual-btn-secondary {
+      background: #fff;
+      color: #1e3746;
+      border-color: #c9d8e1;
+    }
+
+    .manual-btn-secondary:hover {
+      background: #f2f7fb;
+      text-decoration: none;
+    }
+
+    .manual-viewer {
+      width: 100%;
+      height: min(72vh, 900px);
+      min-height: 460px;
+      border: 1px solid #ccd7df;
+      border-radius: 14px;
+      background: #fff;
+      box-shadow: 0 10px 30px rgba(16, 33, 46, 0.08);
+    }
 
     @media (max-width: 800px) {
       .manual-wrap {
         max-width: none;
         width: calc(100vw - 16px);
         padding: 16px 8px 44px;
+      }
+
+      .manual-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .manual-viewer {
+        min-height: 380px;
+        height: 62vh;
       }
     }
   </style>
@@ -120,67 +209,171 @@
   <div class="manual-wrap">
     <section class="manual-hero">
       <h1 class="manual-title">Guest Manual (English)</h1>
-      <p class="manual-sub">Private page for active guests at Sierra & Sea Suite.</p>
-      <a class="manual-btn manual-btn-primary" href="/files/manual-de-huespedes.pdf" target="_blank" rel="noopener noreferrer">Open Original PDF (Spanish)</a>
+      <p class="manual-sub">Private page for active guests at Sierra &amp; Sea Suite.</p>
+      <div class="manual-btns">
+        <a id="manual-open-pdf" class="manual-btn manual-btn-primary" href="/files/manual-de-huespedes.pdf" target="_blank" rel="noopener noreferrer">Open Original PDF</a>
+        <a id="manual-download-pdf" class="manual-btn manual-btn-secondary" href="/files/manual-de-huespedes.pdf" download>Download PDF</a>
+      </div>
+    </section>
+
+    <section class="manual-section manual-section--wifi">
+      <h2>Wi-Fi Access (First Step)</h2>
+      <div class="manual-grid">
+        <div class="manual-tile">
+          <p><strong>Main network (building):</strong></p>
+          <p><strong>Network name:</strong> Condominio Porto Horizonte</p>
+          <p><strong>Account / login:</strong> H1703</p>
+          <p><strong>Password:</strong> Use the portal flow with account <strong>H1703</strong> (the manual does not list a separate Wi-Fi key for this network).</p>
+          <p class="muted">This network uses a portal login flow.</p>
+        </div>
+        <div class="manual-tile">
+          <p><strong>Backup network:</strong></p>
+          <p><strong>Network name:</strong> S&amp;S_GUEST</p>
+          <p class="muted">Use this for devices that do not support portal login (example: Chromecast).</p>
+        </div>
+      </div>
     </section>
 
     <section class="manual-section">
-      <h2>Check-in and Check-out</h2>
-      <ul>
-        <li>Check-in: 3:00 PM</li>
-        <li>Check-out: 11:00 AM</li>
-        <li>Please submit guest IDs in advance so building access wristbands can be prepared.</li>
-        <li>Only registered guests are allowed in the unit and common areas.</li>
-      </ul>
-    </section>
-
-    <section class="manual-section">
-      <h2>Building and Apartment Rules</h2>
+      <h2>Building Rules and Recommendations</h2>
       <ul>
         <li>Quiet hours: 10:00 PM to 8:00 AM.</li>
-        <li>No parties or loud gatherings.</li>
-        <li>No smoking inside the apartment or building.</li>
+        <li>Parties are not allowed.</li>
+        <li>Smoke-free space (no smoking in the apartment/building).</li>
         <li>No pets allowed.</li>
-        <li>Children must be supervised at all times, especially in pool and balcony areas.</li>
+        <li>Please follow building rules and environmental care guidance.</li>
+        <li>Manage trash properly according to building procedures.</li>
+        <li>Beach/sand towel guidance: avoid taking unit towels outside and avoid bringing sand back into the apartment.</li>
       </ul>
-    </section>
-
-    <section class="manual-section">
-      <h2>Amenities and Capacity</h2>
+      <h3>Extra reminders from the manual</h3>
       <ul>
-        <li>Maximum occupancy: 5 guests + 1 baby.</li>
-        <li>Sleeping setup: 1 Queen bed, 1 Queen sofa bed, 1 child-size sofa bed, 1 playard.</li>
-        <li>Included: Wi-Fi, smart TVs, full kitchen, private jacuzzi, air conditioning.</li>
-        <li>Building amenities: 3 pools and gym.</li>
+        <li>The stove/cooktop heats quickly; adjust temperature carefully and use a heat pad/trivet.</li>
+        <li>Use the air conditioning with windows closed.</li>
       </ul>
     </section>
 
     <section class="manual-section">
-      <h2>Kitchen and Cooktop (Translated)</h2>
-      <p><strong>To start cooking on the induction cooktop:</strong></p>
+      <h2>Check-out</h2>
       <ul>
-        <li>Press the <strong>Power</strong> control to turn on the cooktop.</li>
-        <li>Place a suitable pot on the selected cooking zone. Make sure both the pot base and the cooktop surface are clean and dry.</li>
-        <li>Select the cooking zone that corresponds to where the pot is placed.</li>
-        <li>Adjust heat level with the slider: move toward <strong>+</strong> to increase power, toward <strong>-</strong> to decrease power.</li>
-        <li>If no heat level is selected within around 1 minute, the cooktop may turn off automatically. Start again from step 1.</li>
+        <li>Please leave dishes clean before departure.</li>
       </ul>
-      <p class="note">If a burner does not respond, verify the pot is induction-compatible and centered on the selected zone.</p>
+      <p class="note">Standard stay details remain: check-in at 3:00 PM and check-out at 11:00 AM unless your reservation says otherwise.</p>
     </section>
 
     <section class="manual-section">
-      <h2>Location and Transport</h2>
+      <h2>Support and Contact</h2>
+      <p>First use the booking platform channel where you made your reservation.</p>
       <ul>
-        <li>2-minute walk to Bello Horizonte Beach.</li>
-        <li>Approx. 15 minutes by car from Santa Marta airport.</li>
-        <li>Zazué Plaza (shops and restaurants) is nearby.</li>
+        <li>USA voicemail: +1 801-200-3527</li>
+        <li>Email: info@sierraseasuite.com</li>
+        <li>Website: http://www.sierraseasuite.com</li>
       </ul>
     </section>
 
     <section class="manual-section">
-      <h2>Need Help During Your Stay?</h2>
-      <p>Use Airbnb chat for support and stay-related questions. For emergencies, contact building front desk/security first, then message host on Airbnb.</p>
+      <h2>General Information: Transport, Tours, and Services</h2>
+      <h3>Laundry</h3>
+      <ul>
+        <li>LUXURY LAUNDRY</li>
+        <li>Price: 20,000 COP per kilo</li>
+        <li>Delivery: 10,000 COP</li>
+        <li>WhatsApp: +57 304 208 5079</li>
+      </ul>
+      <h3>Transport and tours</h3>
+      <ul>
+        <li>ACQUA (delivery fee 8,200 COP; service price depends on selected option)</li>
+        <li>Tour En Vias: https://www.tourenviasstmtravels.com/</li>
+        <li>TOUR ENVIAS (official building operator): +57 310 480 5997</li>
+        <li>Beach Vives Experiences: Pontoon, speedboat, yacht, sailboat, catamaran</li>
+        <li>Beach Vives website: https://beachvibesexperiences.com/</li>
+        <li>Beach Vives contact: +57 314 740 3261</li>
+      </ul>
+      <h3>Additional contacts listed in the manual</h3>
+      <ul>
+        <li>+57 310 213 2234</li>
+        <li>+57 322 632 4893</li>
+        <li>+57 316 431 7823</li>
+      </ul>
+    </section>
+
+    <section class="manual-section">
+      <h2>Restaurant Delivery</h2>
+      <ul>
+        <li>CASA BLANCA: +57 313 876 7228 (open for breakfast, across from Hilton)</li>
+        <li>LULO: +57 324 574 5549</li>
+        <li>DONDE AMALIA: +57 313 749 7852 (open for breakfast, homemade lunch)</li>
+        <li>CASA ROCHELLE: +57 304 651 7094 (open for breakfast, across from Hilton)</li>
+      </ul>
+    </section>
+
+    <section class="manual-section">
+      <h2>Market / Pharmacy</h2>
+      <ul>
+        <li>CRUZ VERDE: +57 313 399 3815</li>
+        <li>COLSUBSIDIO: +57 312 403 6634</li>
+        <li>CARULLA via Rappi</li>
+      </ul>
+    </section>
+
+    <section class="manual-section">
+      <h2>Cooktop Manual Reminder</h2>
+      <p>The cooktop is powerful. Power levels between <strong>5 and 7</strong> are usually enough for daily cooking.</p>
+    </section>
+
+    <section class="manual-section">
+      <h2>Full Original Manual (with all images)</h2>
+      <p class="muted">The full PDF is embedded below so you can access every visual page and any details not covered in the translated summary.</p>
+      <iframe
+        id="manual-pdf-viewer"
+        class="manual-viewer"
+        title="Guest manual PDF"
+        src="about:blank"
+        loading="eager">
+      </iframe>
+      <p id="manual-pdf-fallback" class="muted" style="display:none; margin-top:10px;">
+        If the PDF does not display in this browser, use the “Open Original PDF” button above.
+      </p>
     </section>
   </div>
+  <script>
+    (function () {
+      var candidates = [
+        "/files/manual-de-huespedes.pdf",
+        "/website/files/manual-de-huespedes.pdf"
+      ];
+      var openLink = document.getElementById("manual-open-pdf");
+      var downloadLink = document.getElementById("manual-download-pdf");
+      var viewer = document.getElementById("manual-pdf-viewer");
+      var fallbackMsg = document.getElementById("manual-pdf-fallback");
+
+      function setPdfUrl(url) {
+        if (openLink) openLink.href = url;
+        if (downloadLink) downloadLink.href = url;
+        if (viewer) viewer.src = url + "#view=FitH";
+        if (fallbackMsg) fallbackMsg.style.display = "none";
+      }
+
+      function tryCandidate(index) {
+        if (index >= candidates.length) {
+          if (fallbackMsg) fallbackMsg.style.display = "block";
+          return;
+        }
+        var url = candidates[index];
+        fetch(url, { method: "HEAD" })
+          .then(function (response) {
+            if (response.ok) {
+              setPdfUrl(url);
+              return;
+            }
+            tryCandidate(index + 1);
+          })
+          .catch(function () {
+            tryCandidate(index + 1);
+          });
+      }
+
+      tryCandidate(0);
+    })();
+  </script>
 </body>
 </html>
