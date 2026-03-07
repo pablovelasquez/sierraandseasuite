@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Guest Manual | Sierra & Sea Suite</title>
+  <meta name="description" content="Guest manual for Sierra & Sea Suite." />
+  <meta name="robots" content="noindex, nofollow, noarchive" />
+  <link href="https://cdn.prod.website-files.com/66d77b216d234ce095d2ceca/css/sierra-sea-suite.webflow.8af95132a.css" rel="stylesheet" type="text/css" />
+  <link href="/css/index-overrides.css?v=20260305c" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+  <style>
+    :root {
+      --panel-bg: #f8fafc;
+      --panel-border: #dbe3ea;
+      --text-main: #10212e;
+      --text-sub: #4a5d69;
+      --accent: #2f9f80;
+      --accent-dark: #1f7b62;
+    }
+
+    .manual-page {
+      background: linear-gradient(180deg, #f4f9f6 0%, #ffffff 45%);
+      min-height: 100vh;
+    }
+
+    .manual-wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 24px 16px 40px;
+    }
+
+    .manual-card {
+      background: var(--panel-bg);
+      border: 1px solid var(--panel-border);
+      border-radius: 14px;
+      padding: 18px;
+      box-shadow: 0 8px 24px rgba(16, 33, 46, 0.06);
+      margin-bottom: 14px;
+    }
+
+    .manual-title {
+      margin: 0 0 6px;
+      font-size: 1.35rem;
+      color: var(--text-main);
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .manual-sub {
+      margin: 0;
+      color: var(--text-sub);
+      font-size: 0.95rem;
+    }
+
+    .manual-actions {
+      margin-top: 12px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .manual-btn {
+      display: inline-block;
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-decoration: none;
+      border: 1px solid transparent;
+      transition: all 0.18s ease;
+    }
+
+    .manual-btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .manual-btn-primary:hover {
+      background: var(--accent-dark);
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .manual-btn-secondary {
+      background: #fff;
+      border-color: #c9d8e1;
+      color: #1e3746;
+    }
+
+    .manual-btn-secondary:hover {
+      background: #f2f7fb;
+      text-decoration: none;
+    }
+
+    .manual-viewer {
+      width: 100%;
+      height: calc(100vh - 280px);
+      min-height: 520px;
+      border: 1px solid #ccd7df;
+      border-radius: 14px;
+      background: #fff;
+      box-shadow: 0 10px 30px rgba(16, 33, 46, 0.08);
+    }
+
+    @media (max-width: 900px) {
+      .manual-viewer {
+        height: calc(100vh - 330px);
+        min-height: 420px;
+      }
+    }
+  </style>
+
+  <script type="text/javascript">
+    (function () {
+      var pdfUrl = "/files/manual-de-huespedes.pdf";
+      var isMobile = /Android|iPhone|iPad|iPod|IEMobile|Opera Mini|Mobile/i.test(navigator.userAgent)
+        || window.matchMedia("(max-width: 900px)").matches;
+
+      if (isMobile) {
+        window.location.replace(pdfUrl);
+      }
+    })();
+  </script>
+</head>
+<body>
+  <div class="manual-page">
+    <div class="navigation">
+      <div data-collapse="medium" data-animation="default" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar-2 w-nav">
+        <div class="nav-content-wrapper w-container">
+          <a href="/" class="brand w-nav-brand"><img width="96" src="/images/logo/small-logo-square.png" alt="Sierra & Sea" class="image-10" /></a>
+          <nav role="navigation" class="nav-menu w-nav-menu">
+            <a href="/" class="navlink-2 w-inline-block"><div>Home</div><div class="underline-2"></div></a>
+            <a href="/contact-us" class="navlink-2 w-inline-block"><div>Contact Us</div><div class="underline-2"></div></a>
+            <a href="/santa-marta-and-sierra-nevada-tourist-guide" class="navlink-2 w-inline-block"><div>Tourist Guide</div><div class="underline-2"></div></a>
+            <div class="login-box"><a href="/es/manual-de-huespedes" class="english-button-2">Español</a></div>
+            <a href="https://airbnb.com/h/sierraseasuite" target="_blank" rel="noopener noreferrer" class="call-us-2 w-inline-block"><div class="phone"><div class="negative-margin"></div><div>Book Now</div></div></a>
+          </nav>
+          <div class="menu-button-2 w-nav-button"><div class="w-icon-nav-menu"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <main class="manual-wrap">
+      <section class="manual-card">
+        <h1 class="manual-title">Guest Manual</h1>
+        <p class="manual-sub">Desktop view loads the embedded PDF. On mobile, the PDF opens directly for better compatibility.</p>
+        <div class="manual-actions">
+          <a class="manual-btn manual-btn-primary" href="/files/manual-de-huespedes.pdf" target="_blank" rel="noopener noreferrer">Open PDF</a>
+          <a class="manual-btn manual-btn-secondary" href="/files/manual-de-huespedes.pdf" download>Download PDF</a>
+        </div>
+      </section>
+
+      <iframe
+        class="manual-viewer"
+        title="Guest manual"
+        src="/files/manual-de-huespedes.pdf#view=FitH"
+        loading="eager">
+      </iframe>
+    </main>
+  </div>
+
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66d77b216d234ce095d2ceca" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+</body>
+</html>
