@@ -65,14 +65,18 @@ jobs:
         run: |
           set -euo pipefail
 
-          FUNCTION_ARN="$(aws cloudfront get-distribution-config \
+          if ! FUNCTION_ARN="$(aws cloudfront get-distribution-config \
             --id "${DISTRIBUTION_ID}" \
             --query "DistributionConfig.DefaultCacheBehavior.FunctionAssociations.Items[?EventType=='viewer-request'].FunctionARN | [0]" \
-            --output text)"
+            --output text 2>/tmp/cf-function-discovery.err)"; then
+            echo "::warning::Skipping CloudFront Function publish (insufficient IAM permissions)."
+            cat /tmp/cf-function-discovery.err || true
+            exit 0
+          fi
 
           if [ -z "${FUNCTION_ARN}" ] || [ "${FUNCTION_ARN}" = "None" ]; then
-            echo "::error::No viewer-request CloudFront Function is associated with distribution ${DISTRIBUTION_ID}."
-            exit 1
+            echo "::warning::No viewer-request CloudFront Function associated with distribution ${DISTRIBUTION_ID}; skipping publish."
+            exit 0
           fi
 
           FUNCTION_NAME="${FUNCTION_ARN##*/}"
