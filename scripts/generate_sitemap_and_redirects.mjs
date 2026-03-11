@@ -9,6 +9,10 @@ const OUTPUT_MANIFEST = path.join(WEBSITE_DIR, "seo-route-manifest.json");
 const OUTPUT_CF_FUNCTION = path.join(ROOT, "infrastructure", "cloudfront", "clean-url-redirect.js");
 const OUTPUT_CF_README = path.join(ROOT, "infrastructure", "cloudfront", "README.md");
 const BASE_URL = (process.env.BASE_URL || "https://www.sierraseasuite.com").replace(/\/$/, "");
+const EXTRA_FUNCTION_ROUTES = {
+  "/es/manual-de-huespedes": "/es/manual-de-huespedes.html",
+  "/en/guest-manual": "/en/guest-manual.html"
+};
 
 async function walk(dir) {
   const entries = await fs.readdir(dir, { withFileTypes: true });
@@ -121,7 +125,10 @@ async function main() {
     "utf8"
   );
 
-  const cleanToHtml = Object.fromEntries(uniqueRoutes.map((r) => [r.cleanPath, r.htmlPath]));
+  const cleanToHtml = {
+    ...Object.fromEntries(uniqueRoutes.map((r) => [r.cleanPath, r.htmlPath])),
+    ...EXTRA_FUNCTION_ROUTES
+  };
 
   const functionSource = `function redirect(location) {
   return {
@@ -139,6 +146,15 @@ var ROUTES = ${JSON.stringify(cleanToHtml, null, 2)};
 function handler(event) {
   var request = event.request;
   var uri = request.uri;
+  var host = request.headers && request.headers.host && request.headers.host.value
+    ? request.headers.host.value.toLowerCase()
+    : '';
+  var isGuestHost = host === 'huespedes.sierraseasuite.com';
+
+  if (isGuestHost && (uri === '/' || uri === '/index.html')) {
+    request.uri = '/es/manual-de-huespedes.html';
+    return request;
+  }
 
   if (uri !== '/' && uri.endsWith('/')) {
     var noSlash = uri.slice(0, -1);

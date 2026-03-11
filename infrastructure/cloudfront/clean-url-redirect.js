@@ -37,12 +37,23 @@ var ROUTES = {
   "/post/santa-marta-without-tayrona-5-day-itinerary": "/post/santa-marta-without-tayrona-5-day-itinerary.html",
   "/post/where-to-stay-santa-marta-bello-horizonte-vs-rodadero-vs-historic-center": "/post/where-to-stay-santa-marta-bello-horizonte-vs-rodadero-vs-historic-center.html",
   "/rules-and-policies": "/rules-and-policies.html",
-  "/santa-marta-and-sierra-nevada-tourist-guide": "/santa-marta-and-sierra-nevada-tourist-guide.html"
+  "/santa-marta-and-sierra-nevada-tourist-guide": "/santa-marta-and-sierra-nevada-tourist-guide.html",
+  "/es/manual-de-huespedes": "/es/manual-de-huespedes.html",
+  "/en/guest-manual": "/en/guest-manual.html"
 };
 
 function handler(event) {
   var request = event.request;
   var uri = request.uri;
+  var host = request.headers && request.headers.host && request.headers.host.value
+    ? request.headers.host.value.toLowerCase()
+    : '';
+  var isGuestHost = host === 'huespedes.sierraseasuite.com';
+
+  if (isGuestHost && (uri === '/' || uri === '/index.html')) {
+    request.uri = '/es/manual-de-huespedes.html';
+    return request;
+  }
 
   if (uri !== '/' && uri.endsWith('/')) {
     var noSlash = uri.slice(0, -1);
