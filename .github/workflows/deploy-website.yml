@@ -5,6 +5,8 @@ on:
     branches: ["main"]
     paths:
       - "website/**"
+      - "infrastructure/cloudfront/**"
+      - "scripts/generate_sitemap_and_redirects.mjs"
       - ".github/workflows/deploy-website.yml"
   workflow_dispatch:
 
@@ -56,6 +58,47 @@ jobs:
       - name: Generate sitemap and SEO route artifacts
         run: |
           node scripts/generate_sitemap_and_redirects.mjs
+
+      - name: Publish CloudFront viewer-request function
+        env:
+          DISTRIBUTION_ID: ${{ env.CLOUDFRONT_DISTRIBUTION_ID }}
+        run: |
+          set -euo pipefail
+
+          FUNCTION_ARN="$(aws cloudfront get-distribution-config \
+            --id "${DISTRIBUTION_ID}" \
+            --query "DistributionConfig.DefaultCacheBehavior.FunctionAssociations.Items[?EventType=='viewer-request'].FunctionARN | [0]" \
+            --output text)"
+
+          if [ -z "${FUNCTION_ARN}" ] || [ "${FUNCTION_ARN}" = "None" ]; then
+            echo "::error::No viewer-request CloudFront Function is associated with distribution ${DISTRIBUTION_ID}."
+            exit 1
+          fi
+
+          FUNCTION_NAME="${FUNCTION_ARN##*/}"
+          FUNCTION_NAME="${FUNCTION_NAME%%:*}"
+          echo "Using CloudFront Function: ${FUNCTION_NAME}"
+
+          DEV_ETAG="$(aws cloudfront describe-function \
+            --name "${FUNCTION_NAME}" \
+            --stage DEVELOPMENT \
+            --query "ETag" \
+            --output text)"
+
+          aws cloudfront update-function \
+            --name "${FUNCTION_NAME}" \
+            --if-match "${DEV_ETAG}" \
+            --function-config "Comment=Generated from scripts/generate_sitemap_and_redirects.mjs,Runtime=cloudfront-js-1.0" \
+            --function-code "fileb://infrastructure/cloudfront/clean-url-redirect.js" >/tmp/cf-update.json
+
+          PUBLISH_ETAG="$(jq -r '.ETag' /tmp/cf-update.json)"
+
+          aws cloudfront publish-function \
+            --name "${FUNCTION_NAME}" \
+            --if-match "${PUBLISH_ETAG}" >/tmp/cf-publish.json
+
+          LIVE_ETAG="$(jq -r '.ETag' /tmp/cf-publish.json)"
+          echo "Published ${FUNCTION_NAME} to LIVE (ETag: ${LIVE_ETAG})"
 
       - name: Sync website to S3
         run: |
